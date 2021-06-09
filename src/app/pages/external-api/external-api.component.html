@@ -1,0 +1,47 @@
+<div class="container mt-5">
+  <h1>Past Orders</h1>
+  <button *ngIf="auth.isAuthenticated$ | async"
+          class="btn btn-primary mb-5"
+          [disabled]="!audience"
+          (click)="userOrders()"
+          
+        >
+         Load Past Orders
+        </button>
+  <div class="row " >
+    <div class="col-md-4 mb-4" *ngIf=orders.user_metadata>
+    </div>
+    <h1 *ngIf=!orders.user_metadata> No past orders, order now to make history </h1>
+
+
+
+  <div class="result-block-container" *ngIf="responseJson">
+    <div class="result-block" [ngClass]="{ show: !!responseJson }">
+      <h6 class="muted">🎉 Your Order has been Successfully Placed, Looks like you love this one!</h6>
+
+    </div>
+  </div>
+  <table class="table" *ngIf=orders.user_metadata>
+    
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Order Name</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let orderin of orders.user_metadata.orders;">
+        <th scope="row"><img src="https://i.ibb.co/4T96D1d/logopizza42.png" width="40px" height="40px"></th>
+        <td>{{orderin.pizza}}</td>
+        <td>   <button *ngIf="auth.isAuthenticated$ | async"
+          class="btn btn-primary mb-5"
+          [disabled]="!audience"
+          (click)="order(orderin.pizza)"
+        >
+          Order Again
+        </button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

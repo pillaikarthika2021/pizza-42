@@ -1,0 +1,87 @@
+<div class="next-steps my-5">
+  <!-- <div class="row" *ngIf="profileJson">
+    <pre
+      class="rounded"
+    ><code class="json" [highlight]="profileJson"></code></pre>
+  </div> -->
+    <h2 class="my-5 text-center">What can I Order?</h2>
+
+    <div class="result-block-container" *ngIf="responseJson">
+      <div class="result-block" [ngClass]="{ show: !!responseJson }">
+        <h6 class="my-5 text-center"> 🎉 Your Order has been Successfully Placed</h6>
+        <!-- <pre>
+          <code class="js rounded" [highlight]="responseJson"></code>
+        </pre> -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="thumbnail">
+          <img src="https://cache.dominos.com/olo/6_56_1/assets/build/market/US/_en/images/img/products/larges/S_PZTACO.jpg" alt="300x200"  style="width: 300px; height: 200px;" class="img-thumbnail">
+          <div class="caption">
+            <h3>Spirit</h3>
+            <p>Pepporoni</p>
+            <p   *ngIf="auth.isAuthenticated$ | async"><a href="#" (click)="order('Spirit')" *ngIf="allData.email_verified" class="btn btn-primary">Buy Now</a>&nbsp; <a href="#"  class="btn btn-danger">Add to Cart</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="thumbnail">
+          <img src="https://cache.dominos.com/olo/6_56_1/assets/build/market/US/_en/images/img/products/larges/S_PZTACO.jpg" alt="300x200"  style="width: 300px; height: 200px;" class="img-thumbnail">
+          <div class="caption">
+            <h3>Opportunity</h3>
+            <p>Tofu</p>
+            <p (click)="order('Opportunity')"  *ngIf="auth.isAuthenticated$ | async"><a href="#" (click)="order('Opportunity')" *ngIf="allData.email_verified" class="btn btn-primary">Buy Now</a> &nbsp;<a href="#" class="btn btn-danger">Add to Cart</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="thumbnail">
+          <img src="https://cache.dominos.com/olo/6_56_1/assets/build/market/US/_en/images/img/products/larges/S_PZTACO.jpg" alt="300x200"  style="width: 300px; height: 200px;" class="img-thumbnail">
+          <div class="caption">
+            <h3>X Æ A-Xii</h3>
+            <p>Elon's Favourite Taco Flavored</p>
+            <p   *ngIf="auth.isAuthenticated$ | async"> <a href="#" (click)="order('X Æ A-Xii')" *ngIf="allData.email_verified" class="btn btn-primary">Buy Now</a> &nbsp; <a href="#" class="btn btn-danger">Add to Cart</a></p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="thumbnail">
+          <img src="https://cache.dominos.com/olo/6_56_1/assets/build/market/US/_en/images/img/products/larges/S_PISPF.jpg" alt="300x200"  style="width: 300px; height: 200px;" class="img-thumbnail">
+          <div class="caption">
+            <h3>Wall-E</h3>
+            <p>Martian Spinach and Feta</p>
+            <p   *ngIf="auth.isAuthenticated$ | async"><a href="#" (click)="order('Wall-E')" *ngIf="allData.email_verified" class="btn btn-primary">Buy Now</a> &nbsp;<a href="#" class="btn btn-danger">Add to Cart</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="thumbnail">
+          <img src="https://cache.dominos.com/olo/6_56_1/assets/build/market/US/_en/images/img/products/larges/S_PIZPH.jpg" alt="300x200"  style="width: 300px; height: 200px;" class="img-thumbnail">
+          <div class="caption">
+            <h3>R2D2</h3>
+            <p>Beep Boop Cheese Steak</p>
+            <p *ngIf="auth.isAuthenticated$ | async"><a href="#"
+              (click)="order('R2D2')" *ngIf="allData.email_verified" class="btn btn-primary">Buy Now</a> &nbsp;<a href="#" class="btn btn-danger">Add to Cart</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="thumbnail">
+          <img src="https://cache.dominos.com/olo/6_56_1/assets/build/market/US/_en/images/img/products/larges/S_PIZBP.jpg" alt="300x200"  style="width: 300px; height: 200px;" class="img-thumbnail">
+          <div class="caption">
+            <h3>Bender's Special</h3>
+            <p>Buffalo Futurama</p>
+            <p  *ngIf="auth.isAuthenticated$ | async"><a href="#" (click)="order('Benders Special')"  *ngIf="allData.email_verified" class="btn btn-primary">Buy Now</a>&nbsp; <a href="#" class="btn btn-danger">Add to Cart</a></p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>

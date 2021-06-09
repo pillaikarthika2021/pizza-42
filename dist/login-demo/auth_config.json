@@ -1,0 +1,8 @@
+{
+  "domain": "pizza42-kp.us.auth0.com",
+  "clientId": "12SDBoNLY41tSMof5eOUfbxXUkFDE47x",
+  "audience": "https://karthika.express",
+  "apiUri": "https://pizza.centralus.cloudapp.azure.com:3001",
+  "appUri": "http://localhost:4200",
+  "errorPath": "/error"
+}
