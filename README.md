@@ -25,8 +25,11 @@ https://pizza.centralus.cloudapp.azure.com/
 
 ## UML diagram
 
+{
+    "plugins": ["js-sequence-diagram"]
+}
 
-```mermaid
+```sequence
 sequenceDiagram
 User->> Pizza42: I want to order a Pizza!
 Pizza42->>Auth0: Calling Auth0 API
