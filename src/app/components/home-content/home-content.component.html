@@ -4,7 +4,12 @@
       class="rounded"
     ><code class="json" [highlight]="profileJson"></code></pre>
   </div> -->
-    <h2 class="my-5 text-center">What can I Order?</h2>
+
+    <span>
+    <h3 class="my-5 text-center" *ngIf="(auth.isAuthenticated$ | async) === false">Login to order and taste our delicious servings</h3></span>
+      <span *ngIf="(auth.isAuthenticated$ | async) === true">
+    <h3 class="my-5 text-center" *ngIf="allData.email_verified==false">Verify your email to an place an order and taste our delicious servings</h3>
+    <h2 class="my-5 text-center" *ngIf="allData.email_verified==true">What would you like to have?</h2></span>
 
     <div class="result-block-container" *ngIf="responseJson">
       <div class="result-block" [ngClass]="{ show: !!responseJson }">
@@ -17,10 +22,10 @@
     <div class="row">
       <div class="col-md-4 mb-4">
         <div class="thumbnail">
-          <img src="https://cache.dominos.com/olo/6_56_1/assets/build/market/US/_en/images/img/products/larges/S_PZTACO.jpg" alt="300x200"  style="width: 300px; height: 200px;" class="img-thumbnail">
+          <img src="https://cache.dominos.com/olo/6_56_1/assets/build/market/US/_en/images/img/products/larges/S_PIZPX.jpg" alt="300x200"  style="width: 300px; height: 200px;" class="img-thumbnail">
           <div class="caption">
             <h3>Spirit</h3>
-            <p>Pepporoni</p>
+            <p>Pepperoni</p>
             <p   *ngIf="auth.isAuthenticated$ | async"><a href="#" (click)="order('Spirit')" *ngIf="allData.email_verified" class="btn btn-primary">Buy Now</a>&nbsp; <a href="#"  class="btn btn-danger">Add to Cart</a></p>
           </div>
         </div>
@@ -28,17 +33,17 @@
 
       <div class="col-md-4 mb-4">
         <div class="thumbnail">
-          <img src="https://cache.dominos.com/olo/6_56_1/assets/build/market/US/_en/images/img/products/larges/S_PZTACO.jpg" alt="300x200"  style="width: 300px; height: 200px;" class="img-thumbnail">
+          <img src="https://cache.dominos.com/olo/6_56_1/assets/build/market/US/_en/images/img/products/larges/S_PIZUH.jpg" alt="300x200"  style="width: 300px; height: 200px;" class="img-thumbnail">
           <div class="caption">
             <h3>Opportunity</h3>
             <p>Tofu</p>
-            <p (click)="order('Opportunity')"  *ngIf="auth.isAuthenticated$ | async"><a href="#" (click)="order('Opportunity')" *ngIf="allData.email_verified" class="btn btn-primary">Buy Now</a> &nbsp;<a href="#" class="btn btn-danger">Add to Cart</a></p>
+            <p *ngIf="auth.isAuthenticated$ | async"><a href="#" (click)="order('Opportunity')" *ngIf="allData.email_verified" class="btn btn-primary">Buy Now</a> &nbsp;<a href="#" class="btn btn-danger">Add to Cart</a></p>
           </div>
         </div>
       </div>
       <div class="col-md-4 mb-4">
         <div class="thumbnail">
-          <img src="https://cache.dominos.com/olo/6_56_1/assets/build/market/US/_en/images/img/products/larges/S_PZTACO.jpg" alt="300x200"  style="width: 300px; height: 200px;" class="img-thumbnail">
+          <img src="https://cache.dominos.com/olo/6_56_1/assets/build/market/US/_en/images/img/products/larges/S_ZZ.jpg" alt="300x200"  style="width: 300px; height: 200px;" class="img-thumbnail">
           <div class="caption">
             <h3>X Æ A-Xii</h3>
             <p>Elon's Favourite Taco Flavored</p>
